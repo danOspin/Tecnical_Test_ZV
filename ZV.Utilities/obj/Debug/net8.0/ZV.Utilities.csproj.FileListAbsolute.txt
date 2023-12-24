@@ -1,0 +1,11 @@
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\ZV.Utilities\bin\Debug\net8.0\ZV.Utilities.deps.json
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\ZV.Utilities\bin\Debug\net8.0\ZV.Utilities.dll
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\ZV.Utilities\bin\Debug\net8.0\ZV.Utilities.pdb
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\ZV.Utilities\obj\Debug\net8.0\ZV.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\ZV.Utilities\obj\Debug\net8.0\ZV.Utilities.AssemblyInfoInputs.cache
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\ZV.Utilities\obj\Debug\net8.0\ZV.Utilities.AssemblyInfo.cs
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\ZV.Utilities\obj\Debug\net8.0\ZV.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\ZV.Utilities\obj\Debug\net8.0\ZV.Utilities.dll
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\ZV.Utilities\obj\Debug\net8.0\refint\ZV.Utilities.dll
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\ZV.Utilities\obj\Debug\net8.0\ZV.Utilities.pdb
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\ZV.Utilities\obj\Debug\net8.0\ref\ZV.Utilities.dll
