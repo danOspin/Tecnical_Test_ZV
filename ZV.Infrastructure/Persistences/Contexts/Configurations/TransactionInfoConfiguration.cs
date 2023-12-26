@@ -35,6 +35,14 @@ namespace ZV.Infrastructure.Persistences.Contexts.Configurations
                 .HasForeignKey(d => d.CommerceId)
                 .HasConstraintName("FK__TRANSACTI__comme__5BE2A6F2");
 
+            entity.HasOne(d => d.TransPaymentMethodNavigation).WithMany(p => p.TransactionInfos)
+                .HasForeignKey(d => d.TransPaymentMethod)
+                .HasConstraintName("FK_TransactionInfo_PaymentMethod");
+
+            entity.HasOne(d => d.TransStatusNavigation).WithMany(p => p.TransactionInfos)
+                .HasForeignKey(d => d.TransStatus)
+                .HasConstraintName("FK_TransactionInfo_TransactionStatus");
+
             entity.HasOne(d => d.User).WithMany(p => p.TransactionInfos)
                 .HasForeignKey(d => d.UserId)
                 .HasConstraintName("FK__TRANSACTI__user___5AEE82B9");

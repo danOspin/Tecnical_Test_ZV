@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ZV.Domain.Entities;
+﻿using ZV.Domain.Entities;
 using ZV.Infrastructure.Commons.Bases.Request;
 using ZV.Infrastructure.Commons.Bases.Response;
 

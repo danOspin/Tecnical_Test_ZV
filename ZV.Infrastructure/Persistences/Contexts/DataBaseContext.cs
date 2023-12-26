@@ -21,7 +21,13 @@ public partial class DataBaseContext : Microsoft.EntityFrameworkCore.DbContext
 
     public virtual DbSet<CommercePerUser> CommercePerUsers { get; set; }
 
+    public virtual DbSet<PaymentMethod> PaymentMethods { get; set; }
+
     public virtual DbSet<TransactionInfo> TransactionInfos { get; set; }
+
+    public virtual DbSet<TransactionInfoAudit> TransactionInfoAudits { get; set; }
+
+    public virtual DbSet<TransactionStatus> TransactionStatuses { get; set; }
 
     public virtual DbSet<UserCredential> UserCredentials { get; set; }
 

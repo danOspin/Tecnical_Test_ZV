@@ -23,5 +23,11 @@ public partial class TransactionInfo
 
     public virtual Commerce? Commerce { get; set; }
 
+    public virtual PaymentMethod? TransPaymentMethodNavigation { get; set; }
+
+    public virtual TransactionStatus? TransStatusNavigation { get; set; }
+
+    public virtual ICollection<TransactionInfoAudit> TransactionInfoAudits { get; set; } = new List<TransactionInfoAudit>();
+
     public virtual UserInfo? User { get; set; }
 }
