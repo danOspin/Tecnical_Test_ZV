@@ -27,7 +27,7 @@ namespace ZV.Infrastructure.Persistences.Repositories
         }
         public async Task<Commerce> GetCommerceByNit(string commerceNit)
         {
-            var commerce = await _context.Commerces!.AsNoTracking().FirstOrDefaultAsync(x => x.CommerceId.Equals(commerceNit));
+            var commerce = await _context.Commerces!.AsNoTracking().FirstOrDefaultAsync(x => x.Nit.Equals(commerceNit));
             return commerce!;
         }
 

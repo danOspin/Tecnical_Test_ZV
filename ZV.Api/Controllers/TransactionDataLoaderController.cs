@@ -4,6 +4,7 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 using ZV.Api.Controllers.Helper;
+using ZV.Application.Dtos.Request;
 namespace ZV.Api.Controllers
 {
     [Route("api/[controller]")]
@@ -11,7 +12,7 @@ namespace ZV.Api.Controllers
     public class TransactionDataLoaderController : ControllerBase
     {
         private readonly string apiurl = "http://pbiz.zonavirtual.com/api/";
-        
+
         [HttpPost]
         public async Task<IActionResult> ListRawTransactions()
             {
@@ -27,13 +28,21 @@ namespace ZV.Api.Controllers
 
                         string jsonResponse = await response.Content.ReadAsStringAsync();
                         List<RawTransaction> allTransactions = JsonConvert.DeserializeObject<List<RawTransaction>>(jsonResponse);
-                        
+                        HashSet<UserInfoRequestDto> user = new HashSet<UserInfoRequestDto>();
+                        HashSet<TransactionRequestDto> transaction = new HashSet<TransactionRequestDto>();
+                        HashSet<CommerceRequestDto> commerce = new HashSet<CommerceRequestDto>(); 
+                        foreach (var item in allTransactions)
+                        {
+                            user.Add(new UserInfoRequestDto(item));
+                            transaction.Add(new TransactionRequestDto(item));
+                            commerce.Add(new CommerceRequestDto(item));
+                        }        
+
                         JsonDocument JsonTransactions = JsonDocument.Parse(JsonConvert.SerializeObject(allTransactions));
-                           
+                        
                         return Ok(JsonTransactions);
                     }
                 }
-
                 catch (HttpRequestException ex)
                 {
                     if (ex.StatusCode == HttpStatusCode.InternalServerError)
@@ -47,8 +56,8 @@ namespace ZV.Api.Controllers
                 {
                     return BadRequest($"Deserialization error: {ex.Message}");
                 }
-
             }
     }
 }
+
 

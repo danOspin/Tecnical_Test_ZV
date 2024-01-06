@@ -1,6 +1,10 @@
-﻿namespace ZV.Infrastructure.Persistences.Interfaces
+﻿using ZV.Domain.Entities;
+
+namespace ZV.Infrastructure.Persistences.Interfaces
 {
-    internal interface ICredentialsRepository
+    public interface ICredentialsRepository
     {
+        Task<bool> RegisterUserCredential(UserCredential credentials);
+        Task<bool> EditCredentials(UserCredential credential);
     }
 }

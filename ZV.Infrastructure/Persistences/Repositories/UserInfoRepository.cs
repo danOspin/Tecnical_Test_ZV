@@ -69,7 +69,7 @@ namespace ZV.Infrastructure.Persistences.Repositories
             _context = context;
         }
 
-        public Task<bool> EditUserInfo(UserInfo userinfo)
+        public async Task<bool> EditUserInfo(UserInfo userinfo)
         {
             throw new NotImplementedException();
         }

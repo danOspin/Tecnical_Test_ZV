@@ -18,7 +18,7 @@ namespace ZV.Api.Controllers.Helper
         public string usuario_identificacion { get; set; }
         public string usuario_nombre { get; set; }
         public string usuario_email { get; set; }
-        public UserInfoRequestDto
+
         public RawTransaction()
         {
             
