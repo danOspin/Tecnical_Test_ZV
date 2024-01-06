@@ -30,5 +30,17 @@ namespace ZV.Application.Dtos.Request
             _userName = username;
             _email = email;
         }
+        public override bool Equals(object? obj)
+        {
+            if (obj is UserInfoRequestDto user)
+            {
+                return _userId == user._userId && _userName == user._userName;
+            }
+            return false;
+        }
+        public override int GetHashCode()
+        {
+            return _userId.GetHashCode() ^ _userName.GetHashCode();
+        }
     }
 }

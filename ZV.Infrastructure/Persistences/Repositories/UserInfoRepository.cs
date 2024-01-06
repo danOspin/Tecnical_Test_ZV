@@ -106,5 +106,23 @@ namespace ZV.Infrastructure.Persistences.Repositories
             var recordsAffected = await _context.SaveChangesAsync();
             return recordsAffected > 0;
         }
+
+        public async Task<bool> RegisterMultipleUserInfo(HashSet<UserInfo> usersinfo)
+        {
+            //usersinfo.ToList().ForEach(x => x.UserStatus=true);
+            foreach (UserInfo userInfo in usersinfo)
+            {
+                var existingUser = _context.UserInfos.Find(userInfo.UserId);
+
+                if (existingUser != null)
+                {
+                    usersinfo.RemoveWhere(user => user.UserId == existingUser.UserId);
+                }
+            }
+
+            await _context.AddRangeAsync(usersinfo);
+            var recordsAffected = await _context.SaveChangesAsync();
+            return recordsAffected > 0;
+        }
     }
 }

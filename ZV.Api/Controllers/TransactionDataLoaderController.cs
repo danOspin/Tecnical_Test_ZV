@@ -112,14 +112,17 @@ namespace ZV.Api.Controllers
                         newCommerce.Add(new CommerceRequestDto(item));
                     }
                     int failInsertion = 0;
-                    foreach (var user in newUsers)
+                    /*foreach (var user in newUsers)
                     {
                         var userResponse = await _userInfoApplication.RegisterUser(user);
                         if (!userResponse.IsSuccess)
                         {
                             failInsertion++;
                         }
-                    }
+                    }*/
+                    var userResponse = await _userInfoApplication.RegisterUsers(newUsers);
+                   
+
                     var results = new
                     {
                         detectedUsers = allTransactions.Count(),

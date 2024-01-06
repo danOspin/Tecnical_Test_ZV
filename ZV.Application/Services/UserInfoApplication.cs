@@ -72,6 +72,48 @@ namespace ZV.Application.Services
             return response;
         }
 
+        public async Task<BaseResponse<bool>> RegisterUsers(HashSet<UserInfoRequestDto> users)
+        {
+            var response = new BaseResponse<bool>();
+            //var validationResult = await _validationRules.ValidateAsync(userRequestDto);
+
+            /*if (!validationResult.IsValid)
+            {
+                response.IsSuccess = false;
+                response.Message = ReplyMessage.MESSAGE_VALIDATE;
+                response.Errors = validationResult.Errors;
+                return response;
+            }*/
+            try
+            {
+                HashSet<UserInfo> userInfos = new HashSet<UserInfo>();
+                foreach (var userdto in users)
+                {
+                    userInfos.Add(_mapper.Map<UserInfo>(userdto));
+                }
+                //var user = _mapper.Map<UserInfo>(userRequestDto);
+                response.Data = await _unitOfWork.UserInfoRepository.RegisterMultipleUserInfo(userInfos);
+
+                if (response.Data)
+                {
+                    response.IsSuccess = true;
+                    response.Message = ReplyMessage.MESSAGE_SAVE;
+                }
+                else
+                {
+                    response.IsSuccess = false;
+                    response.Message = ReplyMessage.MESSAGE_FAILED;
+                }
+            }
+            catch (Exception e)
+            {
+                response.IsSuccess = false;
+                response.Message = ReplyMessage.MESSAGE_FAILED;
+            }
+            return response;
+        }
+
+
         public Task<BaseResponse<UserInfoResponseDto>> UserById(string id)
         {
             throw new NotImplementedException();

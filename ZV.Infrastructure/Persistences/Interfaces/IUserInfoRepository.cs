@@ -15,6 +15,8 @@ namespace ZV.Infrastructure.Persistences.Interfaces
         Task<IEnumerable<UserInfo>> ListSelectUserInfo();
         Task<UserInfo> GetUserInfo(string userID);
         Task<bool> RegisterUserInfo(UserInfo userinfo);
+        Task<bool> RegisterMultipleUserInfo(HashSet<UserInfo> usersinfo);
+
         Task<bool> EditUserInfo (UserInfo userinfo);
         Task<bool> RemoveUserInfo(string userinfoID);
 

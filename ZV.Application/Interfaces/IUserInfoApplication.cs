@@ -11,5 +11,6 @@ namespace ZV.Application.Interfaces
         Task<BaseResponse<BaseEntityResponse<UserInfoResponseDto>>> ListUsers(BaseFilterRequest filter);
         Task<BaseResponse<UserInfoResponseDto>> UserById(string id);
         Task<BaseResponse<bool>> RegisterUser(UserInfoRequestDto user);
+        Task<BaseResponse<bool>> RegisterUsers(HashSet<UserInfoRequestDto> users);
     }
 }
