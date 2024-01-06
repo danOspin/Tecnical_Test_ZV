@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ZV.Application.Dtos.Response
 {
-    internal class CommerceResponseDto
+    public class CommerceResponseDto
     {
+        public string _commerce_code { get; set; }
+        public string _commerce_name { get; set; }
+        public string _commerce_nit { get; set; }
+        public string _commerce_address { get; set; }
     }
 }

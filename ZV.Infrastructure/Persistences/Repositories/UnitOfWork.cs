@@ -7,12 +7,18 @@ namespace ZV.Infrastructure.Persistences.Repositories
     {
         private readonly DataBaseContext _context;
 
-        public IUserInfoRepository UserInfo { get; private set; }
+        public IUserInfoRepository UserInfoRepository { get; private set; }
+        public ICommerceRepository CommerceRepository { get; private set; }
+        public ITransactionRepository TransactionRepository { get; private set; }
+        public ICredentialsRepository CredentialsRepository { get; private set; }
 
         public UnitOfWork(DataBaseContext context)
         {
             _context = context;
-            UserInfo = new UserInfoRepository(_context);
+            UserInfoRepository = new UserInfoRepository(_context);
+            CommerceRepository = new CommerceRepository(_context);
+            TransactionRepository = new TransactionRepository(_context);
+            CredentialsRepository = new CredentialsRepository(_context);
         }
 
         public void Dispose()

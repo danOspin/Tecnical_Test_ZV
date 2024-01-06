@@ -4,7 +4,7 @@ using ZV.Infrastructure.Commons.Bases.Response;
 
 namespace ZV.Infrastructure.Persistences.Interfaces
 {
-    internal interface ITransactionRepository
+    public interface ITransactionRepository
     {
         //Existen varias formas de traer resultados: Filtro por userID, commerceID, Fechas, estadoPago
 

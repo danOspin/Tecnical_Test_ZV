@@ -8,7 +8,7 @@ using ZV.Application.Dtos.Request;
 
 namespace ZV.Application.Validators.UserInfo
 {
-    internal class UserInfoValidator : AbstractValidator<UserInfoRequestDto>
+    public class UserInfoValidator : AbstractValidator<UserInfoRequestDto>
     {
         public UserInfoValidator() 
         {

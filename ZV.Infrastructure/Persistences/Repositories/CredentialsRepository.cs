@@ -13,6 +13,12 @@ namespace ZV.Infrastructure.Persistences.Repositories
     public class CredentialsRepository : GenericRepository<UserCredential>, ICredentialsRepository
     {
         private readonly DataBaseContext _context;
+
+        public CredentialsRepository(DataBaseContext context)
+        {
+            _context = context;
+        }
+
         public async Task<bool> RegisterUserCredential(UserCredential credentials)
         {
             //cifrar contraseña aqui? 

@@ -12,9 +12,15 @@ using ZV.Infrastructure.Persistences.Interfaces;
 
 namespace ZV.Infrastructure.Persistences.Repositories
 {
-    internal class CommerceRepository : GenericRepository<Commerce>, ICommerceRepository
+    public class CommerceRepository : GenericRepository<Commerce>, ICommerceRepository
     {
         private readonly DataBaseContext _context;
+
+        public CommerceRepository(DataBaseContext context)
+        {
+            _context = context;
+        }
+
         public Task<bool> EditCommerce(Commerce commerce)
         {
             throw new NotImplementedException();

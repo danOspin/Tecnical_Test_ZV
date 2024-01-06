@@ -14,6 +14,12 @@ namespace ZV.Infrastructure.Persistences.Repositories
     public class TransactionRepository : GenericRepository<TransactionInfo>, ITransactionRepository
     {
         private readonly DataBaseContext _context;
+
+        public TransactionRepository(DataBaseContext context)
+        {
+            _context = context;
+        }
+
         public async Task<bool> EditTransaction(TransactionInfo transaction)
         {
             throw new NotImplementedException();
