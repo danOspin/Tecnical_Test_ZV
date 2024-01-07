@@ -21,3 +21,7 @@ C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Utiliti
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Utilities\obj\Debug\net8.0\refint\ZV.Utilities.dll
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Utilities\obj\Debug\net8.0\ZV.Utilities.pdb
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Utilities\obj\Debug\net8.0\ref\ZV.Utilities.dll
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Utilities\obj\Debug\net8.0\ZV.Utilities.csproj.AssemblyReference.cache
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Utilities\bin\Debug\net8.0\ZV.Domain.dll
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Utilities\bin\Debug\net8.0\ZV.Domain.pdb
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Utilities\obj\Debug\net8.0\ZV.Utilities.csproj.CopyComplete

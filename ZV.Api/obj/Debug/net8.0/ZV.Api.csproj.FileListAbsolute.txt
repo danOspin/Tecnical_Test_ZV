@@ -300,3 +300,4 @@ C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.genruntimeconfig.cache
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ref\ZV.Api.dll
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin\Debug\net8.0\Chronic.Core.dll

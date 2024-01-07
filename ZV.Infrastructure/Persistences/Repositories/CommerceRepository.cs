@@ -14,11 +14,11 @@ namespace ZV.Infrastructure.Persistences.Repositories
 {
     public class CommerceRepository : GenericRepository<Commerce>, ICommerceRepository
     {
-        private readonly DataBaseContext _context;
+        //private readonly DataBaseContext _context;
 
-        public CommerceRepository(DataBaseContext context)
+        public CommerceRepository(DataBaseContext context) : base(context)
         {
-            _context = context;
+            //_context = context;
         }
 
         public Task<bool> EditCommerce(Commerce commerce)
@@ -77,6 +77,24 @@ namespace ZV.Infrastructure.Persistences.Repositories
         public async Task<bool> RegisterCommerce(Commerce commerce)
         {
             await _context.AddAsync(commerce);
+            var recordsAffected = await _context.SaveChangesAsync();
+            return recordsAffected > 0;
+        }
+
+        public async Task<bool> RegisterMultipleCommerces(HashSet<Commerce> commerces)
+        {
+            //usersinfo.ToList().ForEach(x => x.UserStatus=true);
+            foreach (Commerce commerce in commerces)
+            {
+                var existingUser = _context.Commerces.Find(commerce.CommerceId);
+
+                if (existingUser != null)
+                {
+                    commerces.RemoveWhere(commerce => commerce.CommerceId == existingUser.CommerceId);
+                }
+            }
+
+            await _context.AddRangeAsync(commerces);
             var recordsAffected = await _context.SaveChangesAsync();
             return recordsAffected > 0;
         }

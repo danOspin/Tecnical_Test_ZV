@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tv7fElIaa68Nz74x/oH1GM6BDabzbS3IbnzukNxwBfdM+s6KukzB+jh9wPN7eokJbO7b1Ko4vVP0G8dvUHHIRw==",
+  "dgSpecHash": "NqPdzTPuhNPpD1EhA4jMoc5bz/4WnpIXAnir0LWEJpGfovmRgSBPjTnmnBVBFGbF9ID9ZbEtezGUQ9VexS6WHw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lubriservicios\\source\\repos\\TecnicalTest_ZV\\Tecnical_Test_ZV\\ZV.Application\\ZV.Application.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Lubriservicios\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Lubriservicios\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Lubriservicios\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Lubriservicios\\.nuget\\packages\\chronic.core\\0.4.0\\chronic.core.0.4.0.nupkg.sha512",
     "C:\\Users\\Lubriservicios\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\Lubriservicios\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\Lubriservicios\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",

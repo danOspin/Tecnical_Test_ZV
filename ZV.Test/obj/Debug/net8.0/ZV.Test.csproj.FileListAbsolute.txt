@@ -655,3 +655,4 @@ C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Test\bi
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Test\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Testing.dll
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Test\bin\Debug\net8.0\Microsoft.AspNetCore.TestHost.dll
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Test\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Test\bin\Debug\net8.0\Chronic.Core.dll

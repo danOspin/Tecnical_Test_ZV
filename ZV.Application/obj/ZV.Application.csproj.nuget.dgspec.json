@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
+            "Chronic.Core": {
+              "target": "Package",
+              "version": "[0.4.0, )"
+            },
             "FluentValidation.AspNetCore": {
               "target": "Package",
               "version": "[11.3.0, )"
@@ -241,7 +245,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Lubriservicios\\source\\repos\\TecnicalTest_ZV\\Tecnical_Test_ZV\\ZV.Domain\\ZV.Domain.csproj": {
+                "projectPath": "C:\\Users\\Lubriservicios\\source\\repos\\TecnicalTest_ZV\\Tecnical_Test_ZV\\ZV.Domain\\ZV.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -10,7 +10,7 @@ namespace ZV.Application.Dtos.Response
     {
         public string _trans_code { get; set; }
         public byte _trans_payment_method { get; set; }
-        public byte _trans_status { get; set; }
+        public short _trans_status { get; set; }
         public decimal _trans_total { get; set; }
         public string _trans_date { get; set; }
         public string _trans_concept { get; set; }

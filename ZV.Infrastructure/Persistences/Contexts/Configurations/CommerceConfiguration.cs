@@ -12,8 +12,6 @@ namespace ZV.Infrastructure.Persistences.Contexts.Configurations
 
             entity.ToTable("COMMERCE");
 
-            entity.HasIndex(e => e.Nit, "UQ__COMMERCE__DF97D0E4A35D5892").IsUnique();
-
             entity.Property(e => e.CommerceId)
                 .ValueGeneratedNever()
                 .HasColumnName("commerce_id");

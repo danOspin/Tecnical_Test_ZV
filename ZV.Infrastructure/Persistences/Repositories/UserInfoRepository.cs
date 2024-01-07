@@ -14,7 +14,7 @@ namespace ZV.Infrastructure.Persistences.Repositories
 {
     public class UserInfoRepository : GenericRepository<UserInfo>, IUserInfoRepository
     {
-        private readonly DataBaseContext _context;
+        //private readonly DataBaseContext _context;
         public async Task<BaseEntityResponse<UserInfo>> ListUserInfo(BaseFilterRequest filters)
         {
             var response = new BaseEntityResponse<UserInfo>();
@@ -64,9 +64,9 @@ namespace ZV.Infrastructure.Persistences.Repositories
 
             return response;
         }
-        public UserInfoRepository(DataBaseContext context)
+        public UserInfoRepository(DataBaseContext context) : base(context)
         {
-            _context = context;
+            //_context = context;
         }
 
         public async Task<bool> EditUserInfo(UserInfo userinfo)

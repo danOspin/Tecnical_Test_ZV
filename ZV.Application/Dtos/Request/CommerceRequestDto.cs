@@ -13,19 +13,23 @@ namespace ZV.Application.Dtos.Request
         public string _commerce_name { get; set; }
         public string _commerce_nit { get; set; }
         public string _commerce_address {  get; set; }
+
+        public bool _commerce_status { get; set; }
         public CommerceRequestDto(RawTransaction transaction) 
         {
             _commerce_code = transaction.comercio_codigo.ToString();
             _commerce_name = transaction.comercio_nombre;
             _commerce_nit = transaction.comercio_nit;
             _commerce_address = transaction.comercio_direccion;
+            _commerce_status = true;
         }
-        public CommerceRequestDto(string comercio_codigo, string comercio_nombre, string comercio_nit, string comercio_direccion)
+        public CommerceRequestDto(string comercio_codigo, string comercio_nombre, string comercio_nit, string comercio_direccion, bool commerce_status)
         {
             _commerce_code = comercio_codigo;
             _commerce_name = comercio_nombre;
             _commerce_nit = comercio_nit;
             _commerce_address = comercio_direccion;
+            _commerce_status = commerce_status;
         }
         /// <summary>
         /// Se sobreescriben los métodos equals y getHashCode, para garantizar un comportamiento correcto

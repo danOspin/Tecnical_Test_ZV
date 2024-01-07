@@ -11,9 +11,12 @@ namespace ZV.Infrastructure.Persistences.Interfaces
         Task<BaseEntityResponse<TransactionInfo>> ListTransaction(BaseFilterRequest filters);
         Task<IEnumerable<TransactionInfo>> ListSelectTrasaction();
         Task<TransactionInfo> GetTransactionByTransCode(string transCode);
-        Task<IEnumerable<TransactionInfo>> GetTransactionByCommerceId(string commerceID);
-        Task<IEnumerable<TransactionInfo>> GetTransactionByUserId(string commerceID);
-        Task<bool> RegisterTransaction(TransactionInfo commerce);
+        Task<IEnumerable<TransactionInfo>> GetTransactionByCommerceId(string commerceid);
+        Task<IEnumerable<TransactionInfo>> GetTransactionByUserId(string userid);
+        Task<BaseEntityResponse<TransactionInfo>> ListTransactionsByCommerceId(BaseFilterRequest filters, string commerceid);
+        Task<BaseEntityResponse<TransactionInfo>> ListTransactionByUserId(BaseFilterRequest filters, string userid);
+        Task<bool> RegisterTransaction(TransactionInfo transaction);
+        Task<bool> RegisterMultipleTransactions(HashSet<TransactionInfo> transaction);
         Task<bool> EditTransaction(TransactionInfo transaction);
         Task<bool> RemoveTransaction(string commerceID);
     }

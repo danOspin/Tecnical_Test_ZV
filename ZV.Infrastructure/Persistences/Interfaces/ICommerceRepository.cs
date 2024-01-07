@@ -9,8 +9,8 @@ namespace ZV.Infrastructure.Persistences.Interfaces
         Task<BaseEntityResponse<Commerce>> ListCommerce(BaseFilterRequest filters);
         Task<IEnumerable<Commerce>> ListSelectCommerce();
         Task<Commerce> GetCommerceById(string commerceID);
-
-        Task<bool> RegisterCommerce(Commerce commerce);
+        Task<bool> RegisterCommerce(Commerce commerce); 
+        Task<bool> RegisterMultipleCommerces(HashSet<Commerce> commerces);
         Task<bool> EditCommerce(Commerce commerce);
         //Task<bool> RemoveCommerce(string commerceID);
     }

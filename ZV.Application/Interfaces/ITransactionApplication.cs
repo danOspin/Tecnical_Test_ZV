@@ -16,6 +16,7 @@ namespace ZV.Application.Interfaces
     {
         Task<BaseResponse<BaseEntityResponse<TransactionResponseDto>>> ListTransaction(BaseFilterRequest filter);
         Task<BaseResponse<TransactionResponseDto>> TransactionById(string id);
-        Task<BaseResponse<bool>> RegisterUser(TransactionRequestDto user);
+        Task<BaseResponse<bool>> RegisterTransaction(TransactionRequestDto transaction);
+        Task<BaseResponse<bool>> RegisterMultipleTransactions(HashSet<TransactionRequestDto> transactions);
     }
 }

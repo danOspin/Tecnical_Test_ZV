@@ -104,12 +104,12 @@ namespace ZV.Api.Controllers
                     List<RawTransaction> allTransactions = JsonConvert.DeserializeObject<List<RawTransaction>>(jsonResponse);
                     HashSet<UserInfoRequestDto> newUsers = new HashSet<UserInfoRequestDto>();
                     HashSet<TransactionRequestDto> newTransactions = new HashSet<TransactionRequestDto>();
-                    HashSet<CommerceRequestDto> newCommerce = new HashSet<CommerceRequestDto>();
+                    HashSet<CommerceRequestDto> newCommerces = new HashSet<CommerceRequestDto>();
                     foreach (var item in allTransactions)
                     {
                         newUsers.Add(new UserInfoRequestDto(item));
                         newTransactions.Add(new TransactionRequestDto(item));
-                        newCommerce.Add(new CommerceRequestDto(item));
+                        newCommerces.Add(new CommerceRequestDto(item));
                     }
                     int failInsertion = 0;
                     /*foreach (var user in newUsers)
@@ -120,8 +120,10 @@ namespace ZV.Api.Controllers
                             failInsertion++;
                         }
                     }*/
+                    //Se desactiva temporalmente
                     var userResponse = await _userInfoApplication.RegisterUsers(newUsers);
-                   
+                    var commerceResponse = await _commerceApplication.RegisterMultipleCommerces(newCommerces);
+                    var transactionResponse = await _transactionApplication.RegisterMultipleTransactions(newTransactions);
 
                     var results = new
                     {

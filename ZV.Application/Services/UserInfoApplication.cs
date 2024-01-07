@@ -75,15 +75,20 @@ namespace ZV.Application.Services
         public async Task<BaseResponse<bool>> RegisterUsers(HashSet<UserInfoRequestDto> users)
         {
             var response = new BaseResponse<bool>();
-            //var validationResult = await _validationRules.ValidateAsync(userRequestDto);
 
-            /*if (!validationResult.IsValid)
+            /* Remover de la lista aquellos que fueron invalidos. Retornar aquellos que presentan problemas. Pero esto es secundario.
+             * foreach (var user in users)
             {
-                response.IsSuccess = false;
-                response.Message = ReplyMessage.MESSAGE_VALIDATE;
-                response.Errors = validationResult.Errors;
-                return response;
+                var validationResult = await _validationRules.ValidateAsync(user);
+                if (!validationResult.IsValid)
+                {
+                    response.IsSuccess = false;
+                    response.Message = ReplyMessage.MESSAGE_VALIDATE;
+                    response.Errors = validationResult.Errors;
+                    return response;
+                }
             }*/
+
             try
             {
                 HashSet<UserInfo> userInfos = new HashSet<UserInfo>();

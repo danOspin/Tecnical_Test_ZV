@@ -570,6 +570,9 @@
         }
       },
       "ZV.Utilities/1.0.0": {
+        "dependencies": {
+          "ZV.Domain": "1.0.0"
+        },
         "runtime": {
           "ZV.Utilities.dll": {}
         }

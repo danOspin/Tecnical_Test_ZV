@@ -17,7 +17,7 @@ public partial class TransactionInfo
 
     public string? TransConcept { get; set; }
 
-    public DateOnly? TransDate { get; set; }
+    public DateTime? TransDate { get; set; }
 
     public decimal? TransTotal { get; set; }
 

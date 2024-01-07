@@ -16,5 +16,6 @@ namespace ZV.Application.Interfaces
         Task<BaseResponse<BaseEntityResponse<CommerceResponseDto>>> ListCommerce(BaseFilterRequest filter);
         Task<BaseResponse<CommerceResponseDto>> CommerceById(string id);
         Task<BaseResponse<bool>> RegisterCommerce(CommerceRequestDto commerce);
+        Task<BaseResponse<bool>> RegisterMultipleCommerces(HashSet<CommerceRequestDto> commerces);
     }
 }
