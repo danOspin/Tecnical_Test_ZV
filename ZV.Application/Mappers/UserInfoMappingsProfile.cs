@@ -21,6 +21,12 @@ namespace ZV.Application.Mappers
                 .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src._userId))
                 .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src._userName))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src._email));
+            CreateMap<UserInfo, UserInfoResponseDto>()
+                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UserName))
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+                .ForMember(dest => dest.UserStatus, opt => opt.MapFrom(src => src.UserStatus));
+
         }
 
     }

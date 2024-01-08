@@ -11,5 +11,7 @@ namespace ZV.Application.Dtos.Request
         public string? Username { get; set; }
 
         public string? Pass { get; set; }
+
+        public string? Userid { get; set; }
     }
 }

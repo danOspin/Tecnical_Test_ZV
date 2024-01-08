@@ -79,7 +79,12 @@ namespace ZV.Infrastructure.Persistences.Repositories
             var user = await _context.UserInfos!.AsNoTracking().FirstOrDefaultAsync(x => x.UserId.Equals(userID));
             return user!;
         }
-
+        public async Task<bool> UserExists(string userID)
+        {
+            var user = await _context.UserInfos!.AsNoTracking().FirstOrDefaultAsync(x => x.UserId.Equals(userID));
+            
+            return (user!=null);
+        }
         public async Task<IEnumerable<UserInfo>> ListSelectUserInfo()
         {
             var users = await _context.UserInfos

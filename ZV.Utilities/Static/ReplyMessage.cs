@@ -15,5 +15,6 @@ namespace ZV.Utilities.Static
         public const string MESSAGE_ACTIVATE = "El registro ha sido activado";
         public const string MESSAGE_VALIDATE = "Error de validación";
         public const string MESSAGE_FAILED = "Operación fallida";
+        public const string MESSAGE_NO_PASS = "Sin contraseña";
     }
 }

@@ -1,11 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Net;
 using System.Text;
 using System.Text.Json;
 using ZV.Api.Controllers.Helper;
 using ZV.Application.Dtos.Request;
 using ZV.Application.Interfaces;
+using ZV.Infrastructure.Commons.Bases.Request;
+using ZV.Utilities.Static;
 namespace ZV.Api.Controllers
 {
     [Route("api/[controller]")]
@@ -99,12 +102,13 @@ namespace ZV.Api.Controllers
                     HttpResponseMessage response = await client.GetAsync("d5fca6431292c19579148cde94e30881da70c531/gistfile1.txt");
                     response.EnsureSuccessStatusCode();
 
-
                     string jsonResponse = await response.Content.ReadAsStringAsync();
+                    
                     List<RawTransaction> allTransactions = JsonConvert.DeserializeObject<List<RawTransaction>>(jsonResponse);
                     HashSet<UserInfoRequestDto> newUsers = new HashSet<UserInfoRequestDto>();
                     HashSet<TransactionRequestDto> newTransactions = new HashSet<TransactionRequestDto>();
                     HashSet<CommerceRequestDto> newCommerces = new HashSet<CommerceRequestDto>();
+
                     foreach (var item in allTransactions)
                     {
                         newUsers.Add(new UserInfoRequestDto(item));
@@ -120,7 +124,7 @@ namespace ZV.Api.Controllers
                             failInsertion++;
                         }
                     }*/
-                    //Se desactiva temporalmente
+                    
                     var userResponse = await _userInfoApplication.RegisterUsers(newUsers);
                     var commerceResponse = await _commerceApplication.RegisterMultipleCommerces(newCommerces);
                     var transactionResponse = await _transactionApplication.RegisterMultipleTransactions(newTransactions);
@@ -131,6 +135,7 @@ namespace ZV.Api.Controllers
                         uniqueUsers = newUsers.Count(),
                         failInsertion = failInsertion
                     };
+                    
                     string jsonResult = JsonConvert.SerializeObject(results, Formatting.Indented);
                     //JsonDocument JsonTransactions = JsonDocument.Parse(JsonConvert.SerializeObject(allTransactions));
 
@@ -141,7 +146,7 @@ namespace ZV.Api.Controllers
             {
                 if (ex.StatusCode == HttpStatusCode.InternalServerError)
                 {
-                    return StatusCode(500, new { message = "Internal Server Error", detail = ex.Message });
+                    return StatusCode(500, new { message = "Error 500: Server error", detail = ex.Message });
                 }
                 else
                     return BadRequest($"Http query error: {ex.Message}");
@@ -149,6 +154,37 @@ namespace ZV.Api.Controllers
             catch (System.Text.Json.JsonException ex)
             {
                 return BadRequest($"Deserialization error: {ex.Message}");
+            }
+        }
+
+        //string name, string pass, string userid
+        [HttpPost("Login")]
+        public async Task<IActionResult> Login([FromBody] UserFilterRequest userFilter) //[FromBody] string userid
+        {
+            try
+            {
+                var userResponse = await _userInfoApplication.UserById(userFilter.userid);
+                switch (userResponse.Message)
+                {
+                    case ReplyMessage.MESSAGE_QUERY_EMPTY:
+                        return StatusCode(404, new { message = "Error 404: User Not Found" });
+
+                    case ReplyMessage.MESSAGE_NO_PASS:
+                        return StatusCode(200, new { message = "User found, but need to activate Credentials" });
+
+                    case ReplyMessage.MESSAGE_QUERY:
+                        //TODO:
+                        // dos caminos, credenciales incorrectas o consulta de transacciones
+                        //Debería retornar de una vez las cuentas por pagar.
+                        return StatusCode(200, new { message = "Succesful Login" });
+
+                    default:
+                        return StatusCode(500, new { message = "Unknown message"+ userResponse.Message });
+                }
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, new { message = "Internal Server error", detail = e.Message });
             }
         }
     }

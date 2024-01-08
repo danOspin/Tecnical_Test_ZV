@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using FluentValidation;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +19,8 @@ using ZV.Infrastructure.Persistences.Interfaces;
 using ZV.Utilities.Static;
 
 namespace ZV.Application.Services
-{
+{    
+    
     public class UserInfoApplication : IUserInfoApplication
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -119,9 +122,89 @@ namespace ZV.Application.Services
         }
 
 
-        public Task<BaseResponse<UserInfoResponseDto>> UserById(string id)
+        public async Task<BaseResponse<UserInfoResponseDto>> UserById(string userid)
         {
-            throw new NotImplementedException();
+            var response = new BaseResponse<UserInfoResponseDto>();
+            /*var validationResult = await _validationRules.ValidateAsync(id);
+
+            if (!validationResult.IsValid)
+            {
+                response.IsSuccess = false;
+                response.Message = ReplyMessage.MESSAGE_VALIDATE;
+                response.Errors = validationResult.Errors;
+                return response;
+            }*/
+            try
+            {
+                UserInfo test_user = await _unitOfWork.UserInfoRepository.GetUserInfo(userid);
+
+                if (test_user != null)
+                {
+
+                    var user = _mapper.Map<UserInfoResponseDto>(test_user);
+                    response.Data = user;
+                    response.IsSuccess = true;
+                    response.Message = ReplyMessage.MESSAGE_QUERY;
+                }
+                else
+                {
+                    response.IsSuccess = false;
+                    response.Message = ReplyMessage.MESSAGE_QUERY_EMPTY;
+                }
+            }
+            catch (Exception e)
+            {
+                response.IsSuccess = false;
+                response.Errors = (IEnumerable<FluentValidation.Results.ValidationFailure>?)e.Data;
+                response.Message = ReplyMessage.MESSAGE_FAILED;
+            }
+            return response;
+        }
+
+        public async Task<BaseResponse<UserInfoResponseDto>> UserCredentialStatus(string userid)
+        {
+            var response = new BaseResponse<UserInfoResponseDto>();
+            /*var validationResult = await _validationRules.ValidateAsync(id);
+
+            if (!validationResult.IsValid)
+            {
+                response.IsSuccess = false;
+                response.Message = ReplyMessage.MESSAGE_VALIDATE;
+                response.Errors = validationResult.Errors;
+                return response;
+            }*/
+            try
+            {
+                UserInfo test_user = await _unitOfWork.UserInfoRepository.GetUserInfo(userid);
+
+                if (test_user != null)
+                {
+                    var user = _mapper.Map<UserInfoResponseDto>(test_user);
+                    response.Data = user;
+                    response.IsSuccess = true;
+                    response.Message = ReplyMessage.MESSAGE_QUERY;
+
+                    if (test_user.UserCredential is null)
+                    {
+                        response.Data = user;
+                        response.IsSuccess = false;
+                        response.Message = ReplyMessage.MESSAGE_NO_PASS;
+                    }
+                    
+                }
+                else
+                {
+                    response.IsSuccess = false;
+                    response.Message = ReplyMessage.MESSAGE_QUERY_EMPTY;
+                }
+            }
+            catch (Exception e)
+            {
+                response.IsSuccess = false;
+                response.Errors = (IEnumerable<FluentValidation.Results.ValidationFailure>?)e.Data;
+                response.Message = ReplyMessage.MESSAGE_FAILED;
+            }
+            return response;
         }
     }
 }
