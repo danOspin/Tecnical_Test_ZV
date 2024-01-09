@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZV.Api.Controllers.Helper;
+using ZV.Infrastructure.Commons.Bases.Request;
 
 namespace ZV.Application.Dtos.Request
 {
-    public class CommerceRequestDto
+    public class CommerceRequestDto 
     {
         public string _commerce_code {  get; set; }
         public string _commerce_name { get; set; }

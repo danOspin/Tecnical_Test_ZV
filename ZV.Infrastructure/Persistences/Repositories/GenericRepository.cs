@@ -25,11 +25,11 @@ namespace ZV.Infrastructure.Persistences.Repositories
         }
         protected IQueryable<TDTO> Ordering <TDTO> (BasePaginationRequest request, IQueryable<TDTO> queryable, bool pagination = false) where TDTO: class
         {
-            IQueryable<TDTO> queryDTO = request.Order == "desc" ? queryable.OrderBy($"{request.Sort} descending") : queryable.OrderBy($"{request.Sort}ascending");
+            //IQueryable<TDTO> queryDTO = request.GetOrder() == "desc" ? queryable.OrderBy($"{request.Sort} descending") : queryable.OrderBy($"{request.Sort}ascending");
 
-            if (pagination) queryDTO = queryDTO.Paginate(request);
+            //if (pagination) queryDTO = queryDTO.Paginate(request);
 
-            return queryDTO;
+            return null;
         }
         /*public async Task<bool> RegisterMultipleContent(HashSet<T> hashSetContentDto) 
         {

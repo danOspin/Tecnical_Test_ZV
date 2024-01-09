@@ -25,6 +25,7 @@ namespace ZV.Application.Extensions
             services.AddScoped<IUserInfoApplication, UserInfoApplication>();
             services.AddScoped<ICommerceApplication, CommerceApplication>();
             services.AddScoped<ITransactionApplication, TransactionApplication>();
+            services.AddScoped<IClientApplication, ClientApplication>();
 
             return services;
         }

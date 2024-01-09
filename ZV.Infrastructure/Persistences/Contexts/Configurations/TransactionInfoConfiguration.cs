@@ -8,14 +8,21 @@ namespace ZV.Infrastructure.Persistences.Contexts.Configurations
     {
         public void Configure(EntityTypeBuilder<TransactionInfo> entity)
         {
-            entity.HasKey(e => e.TransCode).HasName("PK__TRANSACT__4BCD394CCF6EF5C7");
+            entity.HasKey(e => e.TransCode).HasName("PK__TRANSACT__4BCD394CB11E2C8D");
 
             entity.ToTable("TRANSACTION_INFO");
 
             entity.Property(e => e.TransCode)
                 .ValueGeneratedNever()
                 .HasColumnName("trans_code");
-            entity.Property(e => e.CommerceId).HasColumnName("commerce_id");
+            entity.Property(e => e.AuditChangeDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("audit_change_date");
+            entity.Property(e => e.CommerceId)
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasColumnName("commerce_id");
             entity.Property(e => e.TransConcept)
                 .HasMaxLength(255)
                 .IsUnicode(false)
@@ -33,19 +40,19 @@ namespace ZV.Infrastructure.Persistences.Contexts.Configurations
 
             entity.HasOne(d => d.Commerce).WithMany(p => p.TransactionInfos)
                 .HasForeignKey(d => d.CommerceId)
-                .HasConstraintName("FK__TRANSACTI__comme__5BE2A6F2");
+                .HasConstraintName("FK__TRANSACTI__comme__0F624AF8");
 
             entity.HasOne(d => d.TransPaymentMethodNavigation).WithMany(p => p.TransactionInfos)
                 .HasForeignKey(d => d.TransPaymentMethod)
-                .HasConstraintName("FK_TransactionInfo_PaymentMethod");
+                .HasConstraintName("FK__TRANSACTI__trans__10566F31");
 
             entity.HasOne(d => d.TransStatusNavigation).WithMany(p => p.TransactionInfos)
                 .HasForeignKey(d => d.TransStatus)
-                .HasConstraintName("FK_TransactionInfo_TransactionStatus");
+                .HasConstraintName("FK__TRANSACTI__trans__114A936A");
 
             entity.HasOne(d => d.User).WithMany(p => p.TransactionInfos)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__TRANSACTI__user___5AEE82B9");
+                .HasConstraintName("FK__TRANSACTI__user___0E6E26BF");
 
         }
     }

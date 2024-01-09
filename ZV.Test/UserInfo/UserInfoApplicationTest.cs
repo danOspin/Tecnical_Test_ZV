@@ -2,8 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ZV.Application.Interfaces;
-using ZV.Application.Services;
-using ZV.Utilities.Static;
+using ZV.Infrastructure.Commons.Bases.Request;
 
 namespace ZV.Test.UserInfo
 {
@@ -22,16 +21,30 @@ namespace ZV.Test.UserInfo
         }
 
         [TestMethod]
-        public async Task RegisterUserInfo_WhenSendingNullValuesOrEmpty_ValidationErrors()
+        public async Task ListTransaction_WhenSendingNoFilters_ValidateTransactionsCount()
         {
             using var scope = _scopeFactory?.CreateScope();
             var context = scope?.ServiceProvider.GetService<ITransactionApplication>();
 
             var name = "";
 
-            var expected = ReplyMessage.MESSAGE_VALIDATE;
+            string test_client_origin_id = "3129";
+            string test_start_date = "13/05/2020";
+            string test_end_date = "13/05/2024";
+            string test_transaction_code = "";
+            string test_client_filter_id = "";
 
-            
+            var expected = 2;
+
+            var result = await context.ListTransaction(new TransactionsPerClientRequestDto()
+            {
+                _client_origin_id = test_client_origin_id,
+                _start_date = test_start_date,
+                _end_date = test_end_date,
+                _transaction_code = test_transaction_code,
+                _client_filter_id = test_client_filter_id
+            });
+
             
         }
 

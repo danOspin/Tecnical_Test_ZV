@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Hncg656xB+v7CGS8yxvFQO4pzVgIxOSoET92IATeBTLBWE0OKNddzKmh70M2GUNJyaBXDZLESisDlnPodMN1/Q==",
+  "dgSpecHash": "i61AHHevUrsEs7flCA+hlTcwj65b0N4TT6KYw9XZPSlFf/qRNyt6oLIEuWi8est1NLG+klvloJExuFU2yjt0VA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lubriservicios\\source\\repos\\TecnicalTest_ZV\\Tecnical_Test_ZV\\ZV.Test\\ZV.Test.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Lubriservicios\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Lubriservicios\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Lubriservicios\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Lubriservicios\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Lubriservicios\\.nuget\\packages\\chronic.core\\0.4.0\\chronic.core.0.4.0.nupkg.sha512",
     "C:\\Users\\Lubriservicios\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\Lubriservicios\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",

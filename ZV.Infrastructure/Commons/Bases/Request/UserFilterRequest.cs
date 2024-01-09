@@ -1,11 +1,11 @@
 ﻿namespace ZV.Infrastructure.Commons.Bases.Request
 {
-    public class UserFilterRequest
+    public class ClientFilterRequest
     {
-        public string userid { get; set; } = "";
+        public string clientid { get; set; } = "";
         public string pass { get; set; } = "";
         public string username { get; set; } = "";
-        public bool usertype { get; set; } = false;
+        //public bool usertype { get; set; } = false;
 
     }
 }

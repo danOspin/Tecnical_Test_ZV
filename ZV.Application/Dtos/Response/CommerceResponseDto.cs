@@ -15,13 +15,13 @@ namespace ZV.Application.Dtos.Response
         public string _commerce_address { get; set; }
         public bool _commerce_status { get; set; }
 
-        public CommerceResponseDto(string comercio_codigo, string comercio_nombre, string comercio_nit, string comercio_direccion, bool commerce_status)
+        /*public CommerceResponseDto(string comercio_codigo, string comercio_nombre, string comercio_nit, string comercio_direccion, bool commerce_status)
         {
             _commerce_code = comercio_codigo;
             _commerce_name = comercio_nombre;
             _commerce_nit = comercio_nit;
             _commerce_address = comercio_direccion;
             _commerce_status = commerce_status;
-        }
+        }*/
     }
 }

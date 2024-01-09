@@ -79,27 +79,28 @@ namespace ZV.Application.Services
         {
             var response = new BaseResponse<bool>();
 
-            /* Remover de la lista aquellos que fueron invalidos. Retornar aquellos que presentan problemas. Pero esto es secundario.
-             * foreach (var user in users)
+            //Remover de la lista aquellos que fueron invalidos. Retornar aquellos que presentan problemas. Pero esto es secundario.
+            foreach (var user in users)
             {
                 var validationResult = await _validationRules.ValidateAsync(user);
                 if (!validationResult.IsValid)
                 {
-                    response.IsSuccess = false;
-                    response.Message = ReplyMessage.MESSAGE_VALIDATE;
-                    response.Errors = validationResult.Errors;
-                    return response;
+
+                    Console.WriteLine("Usuario removido por id nulo");
+                    users.Remove(user);
                 }
-            }*/
+            }
 
             try
             {
                 HashSet<UserInfo> userInfos = new HashSet<UserInfo>();
+                HashSet<Client> clientInfos = new HashSet<Client>();
                 foreach (var userdto in users)
                 {
+                    clientInfos.Add(_mapper.Map <Client>(userdto));
                     userInfos.Add(_mapper.Map<UserInfo>(userdto));
                 }
-                //var user = _mapper.Map<UserInfo>(userRequestDto);
+                response.Data = await _unitOfWork.ClientRepository.RegisterMultipleUserInfo(clientInfos, "Pagador");
                 response.Data = await _unitOfWork.UserInfoRepository.RegisterMultipleUserInfo(userInfos);
 
                 if (response.Data)
@@ -120,8 +121,6 @@ namespace ZV.Application.Services
             }
             return response;
         }
-
-
         public async Task<BaseResponse<UserInfoResponseDto>> UserById(string userid)
         {
             var response = new BaseResponse<UserInfoResponseDto>();
@@ -176,7 +175,8 @@ namespace ZV.Application.Services
             try
             {
                 UserInfo test_user = await _unitOfWork.UserInfoRepository.GetUserInfo(userid);
-
+                Client test = await _unitOfWork.ClientRepository.GetClientBasicInfo(userid);
+                //test.
                 if (test_user != null)
                 {
                     var user = _mapper.Map<UserInfoResponseDto>(test_user);
@@ -184,12 +184,12 @@ namespace ZV.Application.Services
                     response.IsSuccess = true;
                     response.Message = ReplyMessage.MESSAGE_QUERY;
 
-                    if (test_user.UserCredential is null)
+                    /*if (test_user. is null)
                     {
                         response.Data = user;
                         response.IsSuccess = false;
                         response.Message = ReplyMessage.MESSAGE_NO_PASS;
-                    }
+                    }*/
                     
                 }
                 else

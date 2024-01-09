@@ -8,7 +8,7 @@ namespace ZV.Infrastructure.Persistences.Interfaces
     {
         //Existen varias formas de traer resultados: Filtro por userID, commerceID, Fechas, estadoPago
 
-        Task<BaseEntityResponse<TransactionInfo>> ListTransaction(BaseFilterRequest filters);
+        Task<BaseEntityResponse<TransactionInfo>> ListTransaction(TransactionsPerClientRequestDto filters);
         Task<IEnumerable<TransactionInfo>> ListSelectTrasaction();
         Task<TransactionInfo> GetTransactionByTransCode(string transCode);
         Task<IEnumerable<TransactionInfo>> GetTransactionByCommerceId(string commerceid);

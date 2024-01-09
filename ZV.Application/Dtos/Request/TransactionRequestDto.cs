@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using ZV.Api.Controllers.Helper;
 using Chronic;
 using Chronic.Core;
+using ZV.Utilities.Static;
 
 namespace ZV.Application.Dtos.Request
 {
@@ -21,28 +22,14 @@ namespace ZV.Application.Dtos.Request
         public string _commerce_code { get; set; }
         public string _user_id {  get; set; }
 
-        static DateTime ParseDateTimeOrDefault(string dateString, string format)
-        {
-            var parser = new Parser();
-            // Intenta convertir el string a DateTime usando Chronic
-            Span parseResult = parser.Parse(dateString);
-            DateTime fechaDateTime = DateTime.MinValue;
-            if (parseResult != null)
-            {
-                // Imprime el resultado
-                fechaDateTime = (DateTime)parseResult.Start;
-            }
-
-            return fechaDateTime;
-        }
-
+     
         public TransactionRequestDto(RawTransaction transaction)
         {
             _trans_code = transaction.Trans_codigo;
             _trans_payment_method = transaction.Trans_medio_pago;
             _trans_status = (short)transaction.Trans_estado;
             _trans_total = transaction.Trans_total;
-            _trans_date = ParseDateTimeOrDefault(transaction.Trans_fecha, "dd/MM/yyyy hh:mm:ss tt");
+            _trans_date = Helper.ParseDateTimeOrDefault(transaction.Trans_fecha);
             _trans_concept = transaction.Trans_concepto;
             _commerce_code = transaction.comercio_codigo.ToString();
             _user_id = transaction.usuario_identificacion;

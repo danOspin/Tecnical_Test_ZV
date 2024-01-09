@@ -17,52 +17,53 @@ namespace ZV.Infrastructure.Persistences.Repositories
         //private readonly DataBaseContext _context;
         public async Task<BaseEntityResponse<UserInfo>> ListUserInfo(BaseFilterRequest filters)
         {
-            var response = new BaseEntityResponse<UserInfo>();
 
-            var usersInfo = (from c in _context.UserInfos 
-                             where c.UserStatus == true
-                             select c).AsNoTracking().AsQueryable();
+            throw new NotImplementedException();
+            /* var response = new BaseEntityResponse<UserInfo>();
 
-            if (filters.NumFilter is not null && !string.IsNullOrEmpty(filters.TextFilter))
-            {
-                /* Numfilters
-                   1 = filtrar por id
-                   2 = filtrar por username
-                 */
-                switch (filters.NumFilter)
-                {
-                    case 1:
-                        usersInfo = usersInfo.Where(x => x.UserId!.Contains(filters.TextFilter));
-                        break;
-                    case 2:
-                        usersInfo = usersInfo.Where(x => x.UserName!.Contains(filters.TextFilter));
-                        break;
-                }
-            }
-            if (filters.StateFilter is not null)
-            {
-                usersInfo = usersInfo.Where(x => x.UserStatus.Equals(filters.StateFilter));
-            }
-            /*
-            // esto irá a filtro transacciones
-            //Filtro por fecha
-            //var transaction = "";
-            //TODO: && Convert.ToDateTime(filters.StartDate) < Convert.ToDateTime(filters.EndDate) validación de endate > start date
-            if (!string.IsNullOrEmpty(filters.StartDate) && !string.IsNullOrEmpty(filters.EndDate) )
-            {
-                transactions = transactions.Where(x => x.TransDate >= Convert.ToDateTime(filters.StartDate) && x.TransDate <= Convert.ToDateTime(filters.EndDate));
-            }
-            else if (!string.IsNullOrEmpty(filters.StartDate) && string.IsNullOrEmpty(filters.EndDate))
-            {
+             var usersInfo = (from c in _context.UserInfos 
+                              where c.UserStatus == true
+                              select c).AsNoTracking().AsQueryable();
 
-                transactions = transactions.Where(x => x.TransDate >= Convert.ToDateTime(filters.StartDate));
-            }
-            */
-            if (filters.Sort is null) filters.Sort = "user_id";
-            response.TotalRecords = await usersInfo.CountAsync();
-            response.Items = await Ordering(filters, usersInfo, !(bool)filters.Download!).ToListAsync();
+             if (filters.NumFilter is not null && !string.IsNullOrEmpty(filters.TextFilter))
+             {
+                  //Numfilters
+                    //1 = filtrar por id
+                    //2 = filtrar por username
 
-            return response;
+                 switch (filters.NumFilter)
+                 {
+                     case 1:
+                         usersInfo = usersInfo.Where(x => x.UserId!.Contains(filters.TextFilter));
+                         break;
+                     case 2:
+                         usersInfo = usersInfo.Where(x => x.UserName!.Contains(filters.TextFilter));
+                         break;
+                 }
+             }
+             if (filters.StateFilter is not null)
+             {
+                 usersInfo = usersInfo.Where(x => x.UserStatus.Equals(filters.StateFilter));
+             }
+             /*
+             // esto irá a filtro transacciones
+             //Filtro por fecha
+             //var transaction = "";
+             //TODO: && Convert.ToDateTime(filters.StartDate) < Convert.ToDateTime(filters.EndDate) validación de endate > start date
+             if (!string.IsNullOrEmpty(filters.StartDate) && !string.IsNullOrEmpty(filters.EndDate) )
+             {
+                 transactions = transactions.Where(x => x.TransDate >= Convert.ToDateTime(filters.StartDate) && x.TransDate <= Convert.ToDateTime(filters.EndDate));
+             }
+             else if (!string.IsNullOrEmpty(filters.StartDate) && string.IsNullOrEmpty(filters.EndDate))
+             {
+
+                 transactions = transactions.Where(x => x.TransDate >= Convert.ToDateTime(filters.StartDate));
+             }
+             if (filters.Sort is null) filters.Sort = "user_id";
+             response.TotalRecords = await usersInfo.CountAsync();
+             response.Items = await Ordering(filters, usersInfo, !(bool)filters.Download!).ToListAsync();
+
+             return response;*/
         }
         public UserInfoRepository(DataBaseContext context) : base(context)
         {

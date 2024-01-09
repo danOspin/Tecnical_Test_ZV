@@ -8,14 +8,14 @@ namespace ZV.Infrastructure.Commons.Bases.Request
 {
     public class BasePaginationRequest
     {
-        public int NumPage { get; set; } = 1;
-        public int NumRecordsPage { get; set; } = 10;
+        private int NumPage { get; set; } = 1;
+        private int NumRecordsPage { get; set; } = 10;
 
         private readonly int MaxNumRecordPage = 50;
-        public string Order { get; set; } = "asc";
+        private string Order { get; set; } = "asc";
 
-        public string? Sort { get; set; } = null;
-        public int Records
+        private string? Sort { get; set; } = null;
+        private int Records
         {
             get => NumRecordsPage;
             set

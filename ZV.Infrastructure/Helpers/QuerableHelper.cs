@@ -11,7 +11,8 @@ namespace ZV.Infrastructure.Helpers
     {
         public static IQueryable<T> Paginate <T>(this IQueryable<T> queryable, BasePaginationRequest request)
         {
-            return queryable.Skip((request.NumPage - 1) * request.Records).Take(request.Records);
+            return null;
+            //return queryable.Skip((request.NumPage - 1) * request.Records).Take(request.Records);
         }
     }
 }

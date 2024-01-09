@@ -13,9 +13,7 @@ public partial class UserInfo
 
     public bool? UserStatus { get; set; }
 
-    public virtual ICollection<CommercePerUser> CommercePerUsers { get; set; } = new List<CommercePerUser>();
-
     public virtual ICollection<TransactionInfo> TransactionInfos { get; set; } = new List<TransactionInfo>();
 
-    public virtual UserCredential? UserCredential { get; set; }
+    public virtual Client User { get; set; } = null!;
 }

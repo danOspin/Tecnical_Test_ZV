@@ -21,9 +21,9 @@ namespace ZV.Infrastructure.Persistences.Contexts.Configurations
                 .ValueGeneratedNever()
                 .HasColumnName("status_id");
             entity.Property(e => e.Description)
-                    .HasMaxLength(255)
-                    .IsUnicode(false)
-                    .HasColumnName("description");
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("description");
         }
     }
 }

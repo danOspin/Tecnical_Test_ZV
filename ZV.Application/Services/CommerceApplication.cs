@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,27 +51,27 @@ namespace ZV.Application.Services
         {
             var response = new BaseResponse<bool>();
 
-            /* Remover de la lista aquellos que fueron invalidos. Retornar aquellos que presentan problemas. Pero esto es secundario.
-             * foreach (var user in users)
+            foreach (var commerce in commerces)
             {
-                var validationResult = await _validationRules.ValidateAsync(user);
+                var validationResult = await _validationRules.ValidateAsync(commerce);
                 if (!validationResult.IsValid)
                 {
-                    response.IsSuccess = false;
-                    response.Message = ReplyMessage.MESSAGE_VALIDATE;
-                    response.Errors = validationResult.Errors;
-                    return response;
+                    Console.WriteLine("Comercio removido por id nulo");
+                    commerces.Remove(commerce);
                 }
-            }*/
+            }
 
             try
             {
                 HashSet<Commerce> commerceEntities = new HashSet<Commerce>();
+                HashSet<Client> clientInfos = new HashSet<Client>();
                 foreach (var commercedto in commerces)
                 {
+                    clientInfos.Add(_mapper.Map<Client>(commercedto));
                     commerceEntities.Add(_mapper.Map<Commerce>(commercedto));
                 }
                 //var user = _mapper.Map<UserInfo>(userRequestDto);
+                response.Data = await _unitOfWork.ClientRepository.RegisterMultipleUserInfo(clientInfos, "Comercio");
                 response.Data = await _unitOfWork.CommerceRepository.RegisterMultipleCommerces(commerceEntities);
 
                 if (response.Data)

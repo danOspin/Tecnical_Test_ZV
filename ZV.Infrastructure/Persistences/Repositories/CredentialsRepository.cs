@@ -10,7 +10,7 @@ using ZV.Infrastructure.Persistences.Interfaces;
 
 namespace ZV.Infrastructure.Persistences.Repositories
 {
-    public class CredentialsRepository : GenericRepository<UserCredential>, ICredentialsRepository
+    public class CredentialsRepository : GenericRepository<TCredential>, ICredentialsRepository
     {
         public CredentialsRepository(DataBaseContext context) : base(context)
         {
@@ -23,7 +23,7 @@ namespace ZV.Infrastructure.Persistences.Repositories
             _context = context;
         }*/
 
-        public async Task<bool> RegisterUserCredential(UserCredential credentials)
+        public async Task<bool> RegisterUserCredential(TCredential credentials)
         {
             //cifrar contraseña aqui? 
             await base._context.AddAsync(credentials);
@@ -31,7 +31,7 @@ namespace ZV.Infrastructure.Persistences.Repositories
             return recordsAffected > 0;
         }
 
-        public async Task<bool> EditCredentials(UserCredential credential)
+        public async Task<bool> EditCredentials(TCredential credential)
         {
             throw new NotImplementedException();
         }

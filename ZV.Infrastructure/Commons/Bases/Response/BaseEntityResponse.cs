@@ -1,8 +1,10 @@
 ﻿namespace ZV.Infrastructure.Commons.Bases.Response
 {
     public class BaseEntityResponse <T>
-    {
-        public int? TotalRecords { get; set; }
+    {   
+        //Total transaction Cost
+        public decimal ? TotalTransactionsSum { get; set; }
+        public int? CountRegister { get; set; }
         public List<T>? Items { get; set; }
 
     }

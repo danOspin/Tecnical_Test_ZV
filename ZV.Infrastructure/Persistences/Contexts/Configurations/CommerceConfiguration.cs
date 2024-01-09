@@ -8,12 +8,13 @@ namespace ZV.Infrastructure.Persistences.Contexts.Configurations
     {
         public void Configure(EntityTypeBuilder<Commerce> entity)
         {
-            entity.HasKey(e => e.CommerceId).HasName("PK__COMMERCE__C723A1434F3C3C06");
+            entity.HasKey(e => e.CommerceId).HasName("PK__COMMERCE__C723A1436988D23C");
 
             entity.ToTable("COMMERCE");
 
             entity.Property(e => e.CommerceId)
-                .ValueGeneratedNever()
+                .HasMaxLength(100)
+                .IsUnicode(false)
                 .HasColumnName("commerce_id");
             entity.Property(e => e.CommerceAddress)
                 .HasMaxLength(255)
@@ -23,11 +24,16 @@ namespace ZV.Infrastructure.Persistences.Contexts.Configurations
                 .HasMaxLength(255)
                 .IsUnicode(false)
                 .HasColumnName("commerce_name");
-            entity.Property(e => e.CommerceStatus).HasColumnName("commerce_status");
-            entity.Property(e => e.Nit)
+            entity.Property(e => e.CommerceNit)
                 .HasMaxLength(255)
                 .IsUnicode(false)
-                .HasColumnName("nit");
+                .HasColumnName("commerce_nit");
+            entity.Property(e => e.CommerceStatus).HasColumnName("commerce_status");
+
+            entity.HasOne(d => d.CommerceNavigation).WithOne(p => p.Commerce)
+                .HasForeignKey<Commerce>(d => d.CommerceId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__COMMERCE__commer__0B91BA14");
         }
     }
 }

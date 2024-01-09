@@ -148,6 +148,13 @@ C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\ZV.Api\obj\Debug\net8.0\ref
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.pdb
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.genruntimeconfig.cache
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\ZV.Api\obj\Debug\net8.0\ref\ZV.Api.dll
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.csproj.AssemblyReference.cache
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.AssemblyInfoInputs.cache
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.AssemblyInfo.cs
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.csproj.CoreCompileInputs.cache
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.sourcelink.json
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin\Debug\net8.0\appsettings.json
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin\Debug\net8.0\ZV.Api.exe
@@ -159,6 +166,7 @@ C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin\Debug\net8.0\Chronic.Core.dll
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
@@ -279,14 +287,6 @@ C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin\Debug\net8.0\ZV.Infrastructure.pdb
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin\Debug\net8.0\ZV.Utilities.pdb
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\bin\Debug\net8.0\ZV.Domain.pdb
-C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.csproj.AssemblyReference.cache
-C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.AssemblyInfoInputs.cache
-C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.AssemblyInfo.cs
-C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.csproj.CoreCompileInputs.cache
-C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.sourcelink.json
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\staticwebassets\msbuild.ZV.Api.Microsoft.AspNetCore.StaticWebAssets.props
@@ -301,3 +301,4 @@ C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.pdb
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.genruntimeconfig.cache
 C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ref\ZV.Api.dll
+C:\Users\Lubriservicios\source\repos\TecnicalTest_ZV\Tecnical_Test_ZV\ZV.Api\obj\Debug\net8.0\ZV.Api.MvcApplicationPartsAssemblyInfo.cs

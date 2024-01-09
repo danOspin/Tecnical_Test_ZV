@@ -13,11 +13,11 @@ public partial class TransactionInfoAudit
 
     public short? TransStatus { get; set; }
 
-    public byte? GlobalTransationStatus { get; set; }
-
     public DateTime? ChangeDate { get; set; }
 
     public string? ChangedBy { get; set; }
+
+    public string? Annotation { get; set; }
 
     public virtual TransactionInfo? TransCodeNavigation { get; set; }
 

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Chronic.Core.Tags.Repeaters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,30 +30,45 @@ namespace ZV.Application.Services
             _mapper = mapper;
             _validationRules = validationRules;
         }
-        public async Task<BaseResponse<BaseEntityResponse<TransactionResponseDto>>> ListTransaction(BaseFilterRequest filter)
+        public async Task<BaseResponse<BaseEntityResponse<TransactionResponseDto>>> ListTransaction(TransactionsPerClientRequestDto filter)
         {
             var response = new BaseResponse<BaseEntityResponse<TransactionResponseDto>>();
-            //var categories = await _unitOfWork.
-            throw new NotImplementedException();
+            //TODO: Validación de campos antes de ingresar a repository.
+            var transactionResponse = await _unitOfWork.TransactionRepository.ListTransaction(filter);
+            try
+            {
+                if (transactionResponse.CountRegister > 0)
+                {
+                    response.IsSuccess = true;
+                    response.Data = _mapper.Map<BaseEntityResponse<TransactionResponseDto>>(transactionResponse);
+                    response.Message = ReplyMessage.MESSAGE_QUERY;
+                }
+                else
+                {
+                    response.IsSuccess = true;
+                    response.Message = ReplyMessage.MESSAGE_QUERY_EMPTY;
+                }
+            }
+            catch (Exception e)
+            {
+                response.IsSuccess = false;
+                response.Message += e.ToString();
+            }
+            return response;
         }
 
         public async Task<BaseResponse<bool>> RegisterMultipleTransactions(HashSet<TransactionRequestDto> transactions)
         {
             var response = new BaseResponse<bool>();
 
-            /* Remover de la lista aquellos que fueron invalidos. Retornar aquellos que presentan problemas. Pero esto es secundario.
-             * foreach (var user in users)
+            foreach (var transaction in transactions)
             {
-                var validationResult = await _validationRules.ValidateAsync(user);
+                var validationResult = await _validationRules.ValidateAsync(transaction);
                 if (!validationResult.IsValid)
                 {
-                    response.IsSuccess = false;
-                    response.Message = ReplyMessage.MESSAGE_VALIDATE;
-                    response.Errors = validationResult.Errors;
-                    return response;
+                    transactions.Remove(transaction);
                 }
-            }*/
-
+            }
             try
             {
                 HashSet<TransactionInfo> transactionEntities = new HashSet<TransactionInfo>();

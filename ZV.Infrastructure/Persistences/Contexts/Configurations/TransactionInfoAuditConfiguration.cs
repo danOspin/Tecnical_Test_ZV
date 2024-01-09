@@ -13,13 +13,17 @@ namespace ZV.Infrastructure.Persistences.Contexts.Configurations
     {
         public void Configure(EntityTypeBuilder<TransactionInfoAudit> entity)
         {
-            entity.HasKey(e => e.AuditId).HasName("PK__TRANSACT__5AF33E33D989D1A3");
+            entity.HasKey(e => e.AuditId).HasName("PK__TRANSACT__5AF33E33E577B399");
 
             entity.ToTable("TRANSACTION_INFO_AUDIT");
 
             entity.Property(e => e.AuditId)
                 .ValueGeneratedNever()
                 .HasColumnName("audit_id");
+            entity.Property(e => e.Annotation)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("annotation");
             entity.Property(e => e.ChangeDate)
                 .HasColumnType("datetime")
                 .HasColumnName("change_date");
@@ -27,7 +31,6 @@ namespace ZV.Infrastructure.Persistences.Contexts.Configurations
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("changed_by");
-            entity.Property(e => e.GlobalTransationStatus).HasColumnName("global_transation_status");
             entity.Property(e => e.TransCode).HasColumnName("trans_code");
             entity.Property(e => e.TransPaymentMethod).HasColumnName("trans_payment_method");
             entity.Property(e => e.TransStatus).HasColumnName("trans_status");
@@ -38,11 +41,11 @@ namespace ZV.Infrastructure.Persistences.Contexts.Configurations
 
             entity.HasOne(d => d.TransPaymentMethodNavigation).WithMany(p => p.TransactionInfoAudits)
                 .HasForeignKey(d => d.TransPaymentMethod)
-                .HasConstraintName("FK__TRANSACTI__trans__76969D2E");
+                .HasConstraintName("FK__TRANSACTI__trans__151B244E");
 
             entity.HasOne(d => d.TransStatusNavigation).WithMany(p => p.TransactionInfoAudits)
                 .HasForeignKey(d => d.TransStatus)
-                .HasConstraintName("FK__TRANSACTI__trans__778AC167");
+                .HasConstraintName("FK__TRANSACTI__trans__160F4887");
         }
     }
 }

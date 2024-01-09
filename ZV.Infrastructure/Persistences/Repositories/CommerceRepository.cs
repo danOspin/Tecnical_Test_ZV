@@ -33,30 +33,31 @@ namespace ZV.Infrastructure.Persistences.Repositories
         }
         public async Task<Commerce> GetCommerceByNit(string commerceNit)
         {
-            var commerce = await _context.Commerces!.AsNoTracking().FirstOrDefaultAsync(x => x.Nit.Equals(commerceNit));
+            var commerce = await _context.Commerces!.AsNoTracking().FirstOrDefaultAsync(x => x.CommerceNit.Equals(commerceNit));
             return commerce!;
         }
 
         public async Task<BaseEntityResponse<Commerce>> ListCommerce(BaseFilterRequest filters)
         {
-            var response = new BaseEntityResponse<Commerce>();
+            throw new NotImplementedException();
+            /*var response = new BaseEntityResponse<Commerce>();
 
             var commerces = (from c in _context.Commerces
                              select c).AsNoTracking().AsQueryable();
 
             if (filters.NumFilter is not null && !string.IsNullOrEmpty(filters.TextFilter))
             {
-                /* Numfilters
-                   1 = filtrar por commerce_code
-                   2 = filtrar por nit
-                 */
+                //Numfilters
+                  // 1 = filtrar por commerce_code
+                  // 2 = filtrar por nit
+                 
                 switch (filters.NumFilter)
                 {
                     case 1:
                         commerces = commerces.Where(x => x.CommerceId!.Equals(filters.TextFilter));
                         break;
                     case 2:
-                        commerces = commerces.Where(x => x.Nit!.Contains(filters.TextFilter));
+                        commerces = commerces.Where(x => x.CommerceNit!.Contains(filters.TextFilter));
                         break;
                 }
             }
@@ -65,7 +66,7 @@ namespace ZV.Infrastructure.Persistences.Repositories
             response.TotalRecords = await commerces.CountAsync();
             response.Items = await Ordering(filters, commerces, !(bool)filters.Download!).ToListAsync();
 
-            return response;
+            return response;*/
         }
 
         public async Task<IEnumerable<Commerce>> ListSelectCommerce()

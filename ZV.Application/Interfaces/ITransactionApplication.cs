@@ -14,7 +14,7 @@ namespace ZV.Application.Interfaces
 {
     public interface ITransactionApplication
     {
-        Task<BaseResponse<BaseEntityResponse<TransactionResponseDto>>> ListTransaction(BaseFilterRequest filter);
+        Task<BaseResponse<BaseEntityResponse<TransactionResponseDto>>> ListTransaction(TransactionsPerClientRequestDto filter);
         Task<BaseResponse<TransactionResponseDto>> TransactionById(string id);
         Task<BaseResponse<bool>> RegisterTransaction(TransactionRequestDto transaction);
         Task<BaseResponse<bool>> RegisterMultipleTransactions(HashSet<TransactionRequestDto> transactions);

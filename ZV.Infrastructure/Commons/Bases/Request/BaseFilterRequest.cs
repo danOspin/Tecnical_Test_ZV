@@ -1,12 +1,12 @@
 ﻿namespace ZV.Infrastructure.Commons.Bases.Request
 {
-    public class BaseFilterRequest : BasePaginationRequest
+    public class BaseFilterRequest : BasePaginationRequest 
     {
-        public int? NumFilter { get; set; } = null;
-        public string? TextFilter { get; set; } = null;
-        public int? StateFilter { get; set; } = null;
-        public string? StartDate { get; set; } = null;
-        public string? EndDate { get; set;} = null;
-        public bool? Download { get; set; } = false;
+        public string _start_date { get; set; } = null;
+        public string _end_date { get; set;} = null;
+        /*public int? TransactionCode { get; set; } = null;
+        public string? userid { get; set; } = null;
+        */
+
     }
 }

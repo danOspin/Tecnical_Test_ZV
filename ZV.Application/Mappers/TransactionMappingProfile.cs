@@ -28,14 +28,14 @@ namespace ZV.Application.Mappers
                     .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src._user_id));
 
             CreateMap<TransactionInfo,TransactionResponseDto>()
-                    .ForMember(dest => dest._trans_code, opt => opt.MapFrom(src => src.TransCode))
-                    .ForMember(dest => dest._trans_payment_method, opt => opt.MapFrom(src => src.TransPaymentMethod))
-                    .ForMember(dest => dest._trans_status, opt => opt.MapFrom(src => src.TransStatus))
-                    .ForMember(dest => dest._trans_date, opt => opt.MapFrom(src => src.TransDate))
-                    .ForMember(dest => dest._trans_concept, opt => opt.MapFrom(src => src.TransConcept))
-                    .ForMember(dest => dest._trans_total, opt => opt.MapFrom(src => src.TransTotal))
-                    .ForMember(dest => dest._commerce_code, opt => opt.MapFrom(src => src.CommerceId))
-                    .ForMember(dest => dest._user_id, opt => opt.MapFrom(src => src.UserId));
+                    .ForMember(dest => dest.Transaction_code, opt => opt.MapFrom(src => src.TransCode))
+                    .ForMember(dest => dest.Transaction_payment_method, opt => opt.MapFrom(src => src.TransPaymentMethod))
+                    .ForMember(dest => dest.Transaction_status, opt => opt.MapFrom(src => src.TransStatus))
+                    .ForMember(dest => dest.Transaction_date, opt => opt.MapFrom(src => src.TransDate))
+                    .ForMember(dest => dest.Transaction_concept, opt => opt.MapFrom(src => src.TransConcept))
+                    .ForMember(dest => dest.Transaction_total, opt => opt.MapFrom(src => src.TransTotal))
+                    .ForMember(dest => dest.Commerce_code, opt => opt.MapFrom(src => src.CommerceId))
+                    .ForMember(dest => dest.User_id, opt => opt.MapFrom(src => src.UserId));
         }
     }
 }/* 

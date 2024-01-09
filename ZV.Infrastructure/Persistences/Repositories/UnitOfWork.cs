@@ -11,6 +11,7 @@ namespace ZV.Infrastructure.Persistences.Repositories
         public ICommerceRepository CommerceRepository { get; private set; }
         public ITransactionRepository TransactionRepository { get; private set; }
         public ICredentialsRepository CredentialsRepository { get; private set; }
+        public IClientRepository ClientRepository { get; private set; }
 
         public UnitOfWork(DataBaseContext context)
         {
@@ -19,6 +20,7 @@ namespace ZV.Infrastructure.Persistences.Repositories
             CommerceRepository = new CommerceRepository(_context);
             TransactionRepository = new TransactionRepository(_context);
             CredentialsRepository = new CredentialsRepository(_context);
+            ClientRepository = new ClientRepository(_context);
         }
 
         public void Dispose()

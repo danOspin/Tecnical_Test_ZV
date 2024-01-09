@@ -6,6 +6,7 @@
         ICommerceRepository CommerceRepository { get; }
         ITransactionRepository TransactionRepository { get; }
         ICredentialsRepository CredentialsRepository { get; }
+        IClientRepository ClientRepository { get; }
         void SaveChanges();
         Task SaveChangesAsync();
     }

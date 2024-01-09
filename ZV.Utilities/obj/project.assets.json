@@ -46,6 +46,22 @@
           }
         }
       },
+      "Chronic.Core/0.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Chronic.Core.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Chronic.Core.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
@@ -1014,6 +1030,20 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "Chronic.Core/0.4.0": {
+      "sha512": "wtDm6e0LkkkX2/mkAzFVrLdxBxA7qD0E7SPUwXwGHhLlWlwAIdls4P3uku8+B6OYgwum7vuj02wxw+CYZnLeew==",
+      "type": "package",
+      "path": "chronic.core/0.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "chronic.core.0.4.0.nupkg.sha512",
+        "chronic.core.nuspec",
+        "chronic.png",
+        "lib/netstandard2.0/Chronic.Core.dll",
+        "lib/netstandard2.0/Chronic.Core.pdb"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -2674,6 +2704,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Chronic.Core >= 0.4.0",
       "ZV.Domain >= 1.0.0"
     ]
   },
@@ -2719,6 +2750,12 @@
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
+        "dependencies": {
+          "Chronic.Core": {
+            "target": "Package",
+            "version": "[0.4.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

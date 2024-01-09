@@ -9,7 +9,7 @@ public partial class TransactionInfo
 
     public string? UserId { get; set; }
 
-    public int? CommerceId { get; set; }
+    public string? CommerceId { get; set; }
 
     public byte? TransPaymentMethod { get; set; }
 
@@ -20,6 +20,8 @@ public partial class TransactionInfo
     public DateTime? TransDate { get; set; }
 
     public decimal? TransTotal { get; set; }
+
+    public DateTime? AuditChangeDate { get; set; }
 
     public virtual Commerce? Commerce { get; set; }
 
